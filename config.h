@@ -6,8 +6,11 @@ static const unsigned int gappx     = 5;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "firacode:size=12" };
-static const char dmenufont[]       = "firacode:size=10";
+static const char *fonts[]          = { "Fira Code:size=12:antialias=true:autohint=true" ,
+					"JoyPixels:size=12:antialias=true:autohint=true"
+					"Noto Fonts Emoji:size=12:antialias=true:autohint=true"
+				      };
+static const char dmenufont[]       = "Fira Code:size=10";
 //background color
 static const char col_gray1[]       = "#222222";
 //inactive window border color
@@ -60,6 +63,8 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+
+#define STATUSBAR "dwmblocks"
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
