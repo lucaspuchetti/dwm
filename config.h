@@ -113,9 +113,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,              		    XK_n,      shiftview,  	   { .i = +1 } },
 	{ MODKEY,              		    XK_b,      shiftview,      { .i = -1 } },
-    	{ MODKEY,                       XK_F8,     spawn,          SHCMD("amixer -q set Master 5%+ unmute; kill -44 $(pidof dwmblocks)")  },
-    	{ MODKEY,                       XK_F7,     spawn,          SHCMD("amixer -q set Master 5%- unmute; kill -44 $(pidof dwmblocks)")  },
-    	{ MODKEY,                       XK_F5,     spawn,          SHCMD("amixer -q set Master toggle; kill -44 $(pidof dwmblocks)")  },
+    	{ MODKEY,                       XK_F8,     spawn,          SHCMD("$HOME/.scripts/volume-up")  },
+    	{ MODKEY,                       XK_F7,     spawn,          SHCMD("$HOME/.scripts/volume-down")  },
+    	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
+    	{ MODKEY,                       XK_Print,     spawn,          SHCMD("flameshot gui")  },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
