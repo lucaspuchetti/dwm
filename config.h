@@ -116,6 +116,10 @@ static Key keys[] = {
     	{ MODKEY,                       XK_F8,     spawn,          SHCMD("$HOME/.scripts/volume-up")  },
     	{ MODKEY,                       XK_F7,     spawn,          SHCMD("$HOME/.scripts/volume-down")  },
     	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
+    	{ MODKEY,                       XK_Home,     spawn,          SHCMD("$HOME/.scripts/music-play")  },
+    	{ MODKEY,                       XK_End,     spawn,          SHCMD("$HOME/.scripts/music-stop")  },
+    	{ MODKEY,                       XK_Page_Up,     spawn,          SHCMD("$HOME/.scripts/music-next")  },
+    	{ MODKEY,                       XK_Page_Down,     spawn,          SHCMD("$HOME/.scripts/music-previous")  },
     	{ MODKEY,                       XK_Print,     spawn,          SHCMD("flameshot gui")  },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
