@@ -7,7 +7,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code:size=12:antialias=true:autohint=true" ,
-					"JoyPixels:size=12:antialias=true:autohint=true"
+					"JoyPixels:size=12:antialias=true:autohint=true",
 					"Noto Fonts Emoji:size=12:antialias=true:autohint=true"
 				      };
 static const char dmenufont[]       = "Fira Code:size=10";
@@ -20,7 +20,7 @@ static const char col_gray3[]       = "#bbbbbb";
 //current tag and current window font color
 static const char col_gray4[]       = "#eeeeee";
 //Top bar second color (blue) and active window border color
-static const char col_cyan[]        = "#7e20d4";
+static const char col_cyan[]        = "#d89549"; //purple: "#7e20d4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -118,8 +118,8 @@ static Key keys[] = {
     	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
     	{ MODKEY,                       XK_Home,     spawn,          SHCMD("$HOME/.scripts/music-play")  },
     	{ MODKEY,                       XK_End,     spawn,          SHCMD("$HOME/.scripts/music-stop")  },
-    	{ MODKEY,                       XK_Page_Up,     spawn,          SHCMD("$HOME/.scripts/music-next")  },
-    	{ MODKEY,                       XK_Page_Down,     spawn,          SHCMD("$HOME/.scripts/music-previous")  },
+    	{ MODKEY,                       XK_Page_Down,     spawn,          SHCMD("$HOME/.scripts/music-next")  },
+    	{ MODKEY,                       XK_Page_Up,     spawn,          SHCMD("$HOME/.scripts/music-previous")  },
     	{ MODKEY,                       XK_Print,     spawn,          SHCMD("flameshot gui")  },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
