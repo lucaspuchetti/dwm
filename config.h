@@ -79,8 +79,10 @@ static const char *dmenucmd[] = {
 static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 //static const char *termcmd[]  = { "st", NULL };
-//sets urxvt as the default terminal
+//sets alacritty as the default terminal
 static const char *termcmd[] = {"alacritty", NULL};
+//sets vim as the default editor
+//static const char *editorcmd[] = {"alacritty", "-e", "vim", NULL};
 //volume controls
 //static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
 //static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
@@ -92,6 +94,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("neovide --neovim-bin $HOME/.local/bin/lvim") },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -118,14 +121,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,              		    XK_n,      shiftview,  	   { .i = +1 } },
 	{ MODKEY,              		    XK_b,      shiftview,      { .i = -1 } },
-    	{ MODKEY,                       XK_F8,     spawn,          SHCMD("$HOME/.scripts/volume-up")  },
-    	{ MODKEY,                       XK_F7,     spawn,          SHCMD("$HOME/.scripts/volume-down")  },
-    	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
-    	{ MODKEY,                       XK_Home,     spawn,          SHCMD("$HOME/.scripts/music-play")  },
-    	{ MODKEY,                       XK_End,     spawn,          SHCMD("$HOME/.scripts/music-stop")  },
-    	{ MODKEY,                       XK_Page_Down,     spawn,          SHCMD("$HOME/.scripts/music-next")  },
-    	{ MODKEY,                       XK_Page_Up,     spawn,          SHCMD("$HOME/.scripts/music-previous")  },
-    	{ MODKEY,                       XK_Print,     spawn,          SHCMD("flameshot gui")  },
+   	{ MODKEY,                       XK_F8,     spawn,          SHCMD("$HOME/.scripts/volume-up")  },
+   	{ MODKEY,                       XK_F7,     spawn,          SHCMD("$HOME/.scripts/volume-down")  },
+   	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
+   	{ MODKEY,                       XK_Home,   spawn,          SHCMD("$HOME/.scripts/music-play")  },
+   	{ MODKEY,                       XK_End,    spawn,          SHCMD("$HOME/.scripts/music-stop")  },
+   	{ MODKEY,                       XK_Page_Down,spawn,        SHCMD("$HOME/.scripts/music-next")  },
+   	{ MODKEY,                       XK_Page_Up,spawn,          SHCMD("$HOME/.scripts/music-previous")  },
+   	{ MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")  },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
