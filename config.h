@@ -80,9 +80,10 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 //static const char *termcmd[]  = { "st", NULL };
 //sets alacritty as the default terminal
-static const char *termcmd[] = {"alacritty", NULL};
+static const char *termcmd[] = {"alacritty", "-e", "/usr/bin/fish", NULL};
 //sets vim as the default editor
 //static const char *editorcmd[] = {"alacritty", "-e", "vim", NULL};
+static const char *editorcmd[] = {"neovide",  NULL};
 //volume controls
 //static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
 //static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
@@ -94,7 +95,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("neovide --neovim-bin $HOME/.local/bin/lvim") },
+	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
