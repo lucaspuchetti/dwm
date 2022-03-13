@@ -80,10 +80,12 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 //static const char *termcmd[]  = { "st", NULL };
 //sets alacritty as the default terminal
-static const char *termcmd[] = {"alacritty", "-e", "/usr/bin/fish", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 //sets vim as the default editor
 //static const char *editorcmd[] = {"alacritty", "-e", "vim", NULL};
 static const char *editorcmd[] = {"neovide",  NULL};
+//sets brave as the default browser
+static const char *browsercmd[] = {"brave",  NULL};
 //volume controls
 //static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
 //static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
@@ -96,6 +98,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
+	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -113,15 +116,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,              		    XK_n,      shiftview,  	   { .i = +1 } },
-	{ MODKEY,              		    XK_b,      shiftview,      { .i = -1 } },
+	{ MODKEY,              		    XK_period, shiftview,  	   { .i = +1 } },
+	{ MODKEY,              		    XK_comma,  shiftview,      { .i = -1 } },
    	{ MODKEY,                       XK_F8,     spawn,          SHCMD("$HOME/.scripts/volume-up")  },
    	{ MODKEY,                       XK_F7,     spawn,          SHCMD("$HOME/.scripts/volume-down")  },
    	{ MODKEY,                       XK_F5,     spawn,          SHCMD("$HOME/.scripts/volume-mute")  },
