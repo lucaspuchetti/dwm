@@ -12,7 +12,7 @@ static const char *fonts[]          = { "Fira Code:size=12:antialias=true:autohi
 				      };
 static const char dmenufont[]       = "Fira Code:size=10";
 //background color
-static const char col_gray1[] = "#222222";
+static const char col_gray1[] = "#1b2b34";
 // inactive window border color
 static const char col_gray2[] = "#444444";
 // font color
@@ -20,7 +20,7 @@ static const char col_gray3[] = "#bbbbbb";
 // current tag and current window font color
 static const char col_gray4[] = "#eeeeee";
 // Top bar second color (blue) and active window border color
-static const char col_cyan[] = "#d89549"; // purple: "#7e20d4";
+static const char col_cyan[] = "#6699cc"; // purple: "#7e20d4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -74,18 +74,24 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = {
     "dmenu_run", "-i",      "-m",  dmenumon, "-fn", dmenufont, "-nb", col_gray1,
     "-nf",       col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL};
+
 //static const char *filemanager[] = { "
+
 //launches htop
 static const char *monitor[] = { "/usr/bin/htop", NULL };
-//sets st as the default terminal
+
+//sets the default terminal
 //static const char *termcmd[]  = { "st", NULL };
-//sets alacritty as the default terminal
 static const char *termcmd[] = {"alacritty", NULL};
+
 //sets vim as the default editor
 //static const char *editorcmd[] = {"alacritty", "-e", "vim", NULL};
 static const char *editorcmd[] = {"neovide",  NULL};
-//sets brave as the default browser
-static const char *browsercmd[] = {"brave",  NULL};
+
+//sets the default browser
+//static const char *browsercmd[] = {"brave",  NULL};
+static const char *browsercmd[] = {"firefox",  NULL};
+
 //volume controls
 //static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
 //static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", ";", "kill", "-44", "$(pidof", "dwmblocks)", NULL };
